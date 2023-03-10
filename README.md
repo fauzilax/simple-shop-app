@@ -1,1 +1,1 @@
-# Simple Shop APP
+# Simple Shop APP (Ongoing)
