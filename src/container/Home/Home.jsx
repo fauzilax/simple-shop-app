@@ -1,9 +1,20 @@
 import React from "react";
 import "./Home.css"
 import ItemCard from "../../component/ItemCard/ItemCard";
+import ProductCounter from "../ProductCounter/ProductCounter";
+
 
 
 class Home extends React.Component{
+    state = {
+        order : 0
+    }
+    handleCounterChange = (newValue) =>{
+        this.setState({
+            order: newValue
+        })
+    }
+
     render(){
         return(
             <div className="home">
@@ -36,7 +47,10 @@ class Home extends React.Component{
                             />
                         </div>
                     </div>
-                    <div className="cart">                        
+                    <div className="cart"> 
+                        <h1>Cart</h1>
+                        <p>Total Product : {this.state.order}</p>  
+                        <ProductCounter onCounterChange={(value)=>this.handleCounterChange(value)} />                   
                     </div>
                 </div>
               
